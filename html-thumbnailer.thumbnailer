@@ -1,4 +1,4 @@
 [Thumbnailer Entry]
 TryExec=html-thumbnailer
 Exec=html-thumbnailer %i %o %s %u
-MimeType=text/html;
+MimeType=text/html;text/htm;

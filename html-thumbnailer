@@ -5,13 +5,11 @@ from PIL import Image
 
 def make_thumb(src, out, size):
     if size == "":
-        size = 32
+        size = 128
     call(["wkhtmltoimage", src, out])
     img = Image.open(out)
-    wpercent = (size/float(img.size[0]))
-    hsize = int((float(img.size[1])*float(wpercent)))
-    img = img.resize((size,hsize), Image.ANTIALIAS)
-    img.save(out, "PNG")
+    area = (0, 0, size, size*1.5)
+    img.crop(area).save(out, "PNG")
     
     pass
 
